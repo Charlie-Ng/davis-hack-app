@@ -1,1 +1,9 @@
-I am main
+<img ng-src={{picture}} width="200" height="200" ng-hide="!isLoggedIn">
+
+{{welcomeMsg}}
+<button type="button" ng-click="login()" ng-hide="isLoggedIn" class="btn btn-default navbar-btn">
+    Login
+</button>
+<button type="button" ng-click="logout()" ng-hide="!isLoggedIn" class="btn btn-default navbar-btn">
+    Logout
+</button>

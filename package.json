@@ -28,6 +28,7 @@
     "angular-messages": "^1.5.5",
     "angular-mocks": "^1.5.5",
     "angular-route": "^1.5.5",
-    "angular-sanitize": "^1.5.5"
+    "angular-sanitize": "^1.5.5",
+    "ng-facebook": "^0.1.6"
   }
 }
