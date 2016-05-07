@@ -1,0 +1,8 @@
+md-toolbar {
+    background-color: #5cb85c !important;
+}
+
+md-sidenav {
+    min-width: 0px;
+    width: 250px;
+}
