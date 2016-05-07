@@ -8,38 +8,48 @@
     <link rel="stylesheet" href="../node_modules/angular-material/angular-material.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/profile.css">
+
     <title>Title</title>
 </head>
 <body ng-controller="appCtrl" ng-cloak>
 
     <!-- toolbar -->
     <md-toolbar>
-        <div class="md-toolbar-tools">
-            <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleNav()">
-                <i class="material-icons">toc</i>
-            </md-button>
-            <h2>
-                <span>App Name</span>
-            </h2>
-        </div>
+        <p class="main-up-bar-tools">App Name</p>
     </md-toolbar>
 
-    <!-- sideNav -->
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+    <md-toolbar class="main-bottom-bar" layout="row">
+        <md-button aria-label="Settings" href="#/start" flex>
+            <i class="material-icons">touch_app</i>
+        </md-button>
+        <md-button aria-label="Settings" href="#/make" flex>
+            <i class="material-icons">library_books</i>
+        </md-button>
+        <md-button aria-label="Settings" href="#/history" flex>
+            <i class="material-icons">account_balance</i>
+        </md-button>
+        <md-button  aria-label="Settings" href="#/profile" flex>
+            <i class="material-icons">account_box</i>
+        </md-button>
+    </md-toolbar>
 
-        <md-toolbar class="md-theme-indigo">
-            <h1 class="md-toolbar-tools">Menu</h1>
-        </md-toolbar>
+    <!--&lt;!&ndash; sideNav &ndash;&gt;-->
+    <!--<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">-->
 
-        <md-content layout-padding>
-            <md-list>
-                <md-list-item ng-repeat="m in menuOptions">
-                    <md-button aria-label="items" ng-href="#/{{m.name}}" ng-click="closeNav()" flex>{{m.name}}</md-button>
+        <!--<md-toolbar class="md-theme-indigo">-->
+            <!--<h1 class="md-toolbar-tools">Menu</h1>-->
+        <!--</md-toolbar>-->
 
-                </md-list-item>
-            </md-list>
-        </md-content>
-    </md-sidenav>
+        <!--<md-content layout-padding>-->
+            <!--<md-list>-->
+                <!--<md-list-item ng-repeat="m in menuOptions">-->
+                    <!--<md-button aria-label="items" ng-href="#/{{m.name}}" ng-click="closeNav()" flex>{{m.name}}</md-button>-->
+
+                <!--</md-list-item>-->
+            <!--</md-list>-->
+        <!--</md-content>-->
+    <!--</md-sidenav>-->
 
     <!-- views -->
     <md-content ng-view></md-content>
@@ -58,6 +68,10 @@
 <script type="text/javascript" src="app.modules.js"></script>
 <script type="text/javascript" src="app.controller.js"></script>
 <script type="text/javascript" src="templates/intro/intro.js"></script>
+<script type="text/javascript" src="templates/profile/profile.js"></script>
+<script type="text/javascript" src="templates/history/history.js"></script>
+<script type="text/javascript" src="templates/make/make.js"></script>
+
 
 </body>
 </html>

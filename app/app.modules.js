@@ -10,14 +10,19 @@
             $routeProvider
                 .when('/', {
                     templateUrl: 'templates/intro/intro.html',
-                    controller: 'introCtrl'
+                    //controller: 'introCtrl'
                 })
-                .when('/intro', {
-                    templateUrl: 'templates/intro/intro.html',
-                    controller: 'introCtrl'
+                .when('/profile', {
+                    templateUrl: 'templates/profile/profile.html',
+                    controller: 'profileCtrl'
                 })
-                .when('/item1', {
-                    templateUrl: 'templates/item1/item1.html'
+                .when('/make', {
+                    templateUrl: 'templates/make/make.html',
+                    //controller: 'makeCtrl'
+                })
+                .when('/history', {
+                    templateUrl: 'templates/history/history.html',
+                    //controller: ''
                 });
 
             $facebookProvider.setAppId('1612301489091125');

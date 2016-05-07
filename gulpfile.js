@@ -50,6 +50,7 @@ gulp.task('serve', function () {
     gulp.watch('app/*.js', ['js-watch']);
     gulp.watch('app/templates/**/*.js', ['js-watch']);
     gulp.watch('app/templates/**/*.html', ['js-watch']);
+    gulp.watch('app/css/*.css', ['js-watch']);
     //gulp.watch('app/templates/item1/*.js', ['js-watch']);
     //gulp.watch('app/templates/item1/*.html', ['js-watch']);
     gulp.watch('index.html').on('change', function() {

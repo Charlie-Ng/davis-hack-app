@@ -2,7 +2,26 @@ md-toolbar {
     background-color: #5cb85c !important;
 }
 
+.main-up-bar-tools {
+    text-align: center !important;
+}
+
 md-sidenav {
     min-width: 0px;
     width: 250px;
+}
+
+.main-bottom-bar {
+    position: absolute;
+    bottom: 0px;
+    min-height: 0;
+    height: 42px;
+}
+
+.main-bottom-bar a {
+    margin: 0;
+}
+
+.main-bottom-bar i {
+    padding-top: 10px;
 }
