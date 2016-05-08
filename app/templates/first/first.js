@@ -7,6 +7,8 @@
         ['$scope', '$facebook', 'userService', function($scope, $facebook, UserService) {
 
             $scope.counter = [];
+            $scope.disabled = false;
+
 
             $scope.dataObj = [
                 {
@@ -75,10 +77,16 @@
                 ];
 
 
-            //$scope.toggle= function(user) {
-            //    console.log(user);
-            //    $scope.counter.push(user.)
-            //}
+            $scope.toggle= function(user) {
+
+                $scope.counter.push(user.name);
+
+                if($scope.counter.length > 5) {
+                    $scope.disabled = true;
+                }else {
+                    $scope.disabled = false;
+                }
+            }
 
         }]);
 }());
