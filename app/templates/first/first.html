@@ -1,0 +1,25 @@
+<md-content >
+    <md-card ng-repeat="user in dataObj">
+        <md-card-title>
+            <md-card-title-text>
+                <b>{{user.name}}</b>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <div>
+                <strong>Interest:</strong> {{user.interest}}
+            </div>
+            <div>
+                <strong>Phone: </strong>{{user.phone}}
+            </div>
+            <div>
+                <strong>Location:</strong> {{user.location}}
+            </div>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-checkbox ng-click="toggle(user)">
+                <span>Interested !</span>
+            </md-checkbox>
+        </md-card-actions>
+    </md-card>
+</md-content>

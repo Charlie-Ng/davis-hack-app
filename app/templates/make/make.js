@@ -14,8 +14,9 @@
             $scope.results = [];
 
             $scope.isLoading = false;
-
+            
             $scope.keywords = {"text" : ""};
+            
 
             $scope.selectedFood = {};
 
@@ -32,7 +33,8 @@
 
                 $scope.isLoading = true;
                 var q = $scope.keywords.text;
-
+                
+                
                 $http.get($scope.url+q)
 
                     .success(function(data, status) {
@@ -69,6 +71,8 @@
                         $scope.isLoading = false;
                     });
             };
+
+
 
             $scope.store = function() {
                 $scope.showResult();
@@ -150,6 +154,7 @@
                     $scope.search();
                 }
             };
+            
 
 
             //preview dialog function

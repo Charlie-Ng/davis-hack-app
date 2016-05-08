@@ -23,6 +23,10 @@
                 .when('/location', {
                     templateUrl: 'templates/location/location.html',
                     controller: 'locationCtrl'
+                })
+                .when('/first', {
+                    templateUrl: 'templates/first/first.html',
+                    controller: 'firstCtrl'
                 });
 
             $facebookProvider.setAppId('1612301489091125');

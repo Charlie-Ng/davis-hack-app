@@ -16,6 +16,7 @@
         </div>
 
         <iframe class = "video" src="https://player.vimeo.com/video/165748115?autoplay=1&loop=1&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
     </div>
 
     <div ng-show="isLoggedIn">
@@ -40,7 +41,7 @@
 
                 <md-input-container>
                     <label>Description</label>
-                    <textarea placeholder="I am ..." ng-model="userObj.description" ng-disabled="!isDisabled"></textarea>
+                    <textarea placeholder="What I want to eat" ng-model="userObj.description" ng-disabled="isDisabled"></textarea>
                 </md-input-container>
 
             </form>

@@ -24,3 +24,13 @@
 .make-dialog-preview-toolbar {
     padding: 0 10px 0 10px;
 }
+
+.pic{
+    margin-left: 26%;
+    width:40%;
+    height:400%;
+    display: block;
+    padding:10px;
+    background-color: transparent;
+}
+
