@@ -119,5 +119,12 @@ img.lid{
     }
 }
 
+.profile-join {
+    text-align: center;
+    font-size:200%;
+    font-family: 'Over the Rainbow';
+    font-weight:bold;
+    color: #348dff;
+}
 
 
