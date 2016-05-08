@@ -200,6 +200,7 @@
                     + listingObj.fat + "&carbon=" + listingObj.carbon + "&protein=" + listingObj.protein + "&appDate=" + listingObj.appDate + "&phoneNumber=" + listingObj.phoneNumber;
 
                 UserService.createUserListing(listingObj, queryString);
+                $scope.cancel();
             };
 
         }]);
