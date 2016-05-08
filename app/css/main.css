@@ -28,20 +28,43 @@ md-sidenav {
 
 .intro-text {
     text-align: center;
+    font-size:130%;
+    font-family: 'Bad Script', cursive;
+    color:LightSlateGrey ;
 }
 
-.intro-nav {
-    line-height:30px;
-    background-color:#eeeeee;
-    height:300px;
-    width:29%;
+.intro-des {
+    line-height:20px;
+    background-color:WhiteSmoke ;
+    height:100%;
+    width:40%;
     float:left;
     padding:5px;
+    font-size:100%;
+    font-family: 'Kalam', cursive;
+    color:Teal;
 }
 
 .intro-section {
-    width:38%;
+    width:45%;
     height:300px;
     float:left;
     padding:10px;
+}
+img.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width:80%;
+    max-height:80%;
+}
+
+.app-name {
+    text-align: center;
+    height:100%;
+    width:40%;
+    padding:5px;
+    font-size:200%;
+    font-family: 'Rock Salt', cursive;
+    color:white;
 }
