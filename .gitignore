@@ -3,3 +3,5 @@ node_modules
 
 # IDEs
 .idea
+
+.DS_Store
