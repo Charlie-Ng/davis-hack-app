@@ -11,6 +11,8 @@
     angular.module('appControllers').controller('appCtrl',
         ['$scope', '$mdSidenav', function($scope, $mdSidenav) {
 
+            $scope.firstUser = "";
+
             $scope.toggleNav = function() {
 
                 $mdSidenav('left').toggle();

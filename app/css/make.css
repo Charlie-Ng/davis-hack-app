@@ -18,4 +18,9 @@
 
 .make-tile-body {
     margin: auto;
+    text-align: center;
+}
+
+.make-dialog-preview-toolbar {
+    padding: 0 10px 0 10px;
 }

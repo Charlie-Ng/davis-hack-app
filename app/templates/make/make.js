@@ -5,7 +5,7 @@
 (function() {
 
     angular.module('appControllers').controller('makeCtrl',
-        ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
+        ['$scope', '$http', '$mdMedia', '$mdDialog', 'userService', '$facebook', function($scope, $http, $mdMedia, $mdDialog, UserService, $facebook) {
 
             $scope.url = 'http://shawnxiang.com/lunchbox/recipeSearch.php?input='; // The url of our search
 
@@ -16,6 +16,15 @@
             $scope.isLoading = false;
 
             $scope.keywords = {"text" : ""};
+
+            $scope.selectedFood = {};
+
+            $scope.myTimeObj = {
+                'myDate': new Date(),
+                'myTime' : "",
+                'myLocation': "",
+                'myPhone' : ""
+            };
 
             $scope.search = function() {
 
@@ -28,6 +37,10 @@
 
                     .success(function(data, status) {
 
+                        $scope.results = [];
+
+                        console.log(data);
+
                         //$scope.result = data['hits']; // Show result from server in our <pre></pre> element
                         for(var i = 0; i < data['hits'].length; i++) {
 
@@ -37,6 +50,7 @@
                             oneItem["carbon"] = tmp.totalNutrients["CHOCDF"]["quantity"];
                             oneItem["protein"] = tmp.totalNutrients["PROCNT"]["quantity"];
                             oneItem["label"] = tmp['label'];
+                            oneItem["ingredientLines"] = tmp['ingredientLines'];
 
                             oneItem["url"] = tmp.url;
                             oneItem["image"] = tmp.image;
@@ -136,6 +150,63 @@
                     $scope.search();
                 }
             };
+
+
+            //preview dialog function
+            $scope.showPreview = function(food) {
+
+                var useFullScreen = $mdMedia('sm') || $mdMedia('xs');
+
+                $scope.selectedFood = food;
+
+                $mdDialog.show({
+                    scope: $scope,
+                    preserveScope: true,
+                    parent: angular.element(document.body),
+                    controller: 'makeDialogCtrl',
+                    templateUrl: 'templates/make/dialog.preview.html',
+                    fullscreen: useFullScreen
+                });
+            };
+
+            console.log($scope.$parent.firstUser);
+
+            $scope.saveListing = function() {
+
+                //build object
+                var listingObj = {};
+
+                listingObj["latitude"] = $scope.lat;
+                listingObj["longtitude"] = $scope.lng;
+                listingObj["location"] = $scope.myTimeObj.myLocation;
+                listingObj["food"] = $scope.selectedFood.label;
+                listingObj["appTime"] = $scope.myTimeObj.myTime;
+                listingObj["calories"] = $scope.selectedFood.calories;
+                listingObj["fat"] = $scope.selectedFood.fat;
+                listingObj["carbon"] = $scope.selectedFood.carbon;
+                listingObj["appDate"] = $scope.myTimeObj.myDate;
+                listingObj["phoneNumber"] = $scope.myTimeObj.myPhone;
+                listingObj["protein"] = $scope.selectedFood.protein;
+                listingObj["user"] = $scope.$parent.firstUser;
+
+                var queryString = "?latitude=" + listingObj.latitude + "&longtitude=" + listingObj.longtitude + "&location=" + listingObj.location + "&food="
+                    + listingObj.food + "&user=" + listingObj.user + "&appTime=" + listingObj.appTime + "&calories=" + listingObj.calories + "&fat="
+                    + listingObj.fat + "&carbon=" + listingObj.carbon + "&protein=" + listingObj.protein + "&appDate=" + listingObj.appDate + "&phoneNumber=" + listingObj.phoneNumber;
+
+                UserService.createUserListing(listingObj, queryString);
+            };
+
+        }]);
+
+    //preview controller
+    angular.module('appControllers').controller('makeDialogCtrl',
+        ['$scope','$mdDialog','userService','$facebook', function($scope, $mdDialog, UserService, $facebook) {
+
+            $scope.cancel = function() {
+
+                $mdDialog.cancel();
+            };
+
 
         }]);
 }());

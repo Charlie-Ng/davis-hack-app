@@ -35,12 +35,12 @@
 
                 <md-input-container>
                     <label>Gender</label>
-                    <input placeholder="Male/Female" ng-model="userObj.gender" ng-disabled="isDisabled">
+                    <input placeholder="Male/Female" ng-model="userObj.gender" ng-disabled="!isDisabled">
                 </md-input-container>
 
                 <md-input-container>
                     <label>Description</label>
-                    <textarea placeholder="I am ..." ng-model="userObj.description" ng-disabled="isDisabled"></textarea>
+                    <textarea placeholder="I am ..." ng-model="userObj.description" ng-disabled="!isDisabled"></textarea>
                 </md-input-container>
 
             </form>

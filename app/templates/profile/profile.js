@@ -37,6 +37,8 @@
                         console.log(response);
                         var userId = response.id;
 
+                        $scope.$parent.firstUser = response.name;
+
                         $scope.userObj.picture = response.picture.data.url;
                         $scope.isLoggedIn = true;
 
@@ -51,9 +53,10 @@
                             }
                             else if(data) {
 
-                                $scope.welcomeMsg = "Welcome Back" + response.name;
-                                $scope.userObj.description = data.description;
-                                $scope.userObj.gender = data.gender;
+                                $scope.welcomeMsg = "Welcome Back " + response.name;
+                                console.log(data);
+                                $scope.userObj.description = data[0].description;
+                                $scope.userObj.gender = data[0].gender;
                                 $scope.isDisabled = true;
                             }
                             else if(data.length === 0) {
@@ -89,7 +92,7 @@
             };
 
 
-            //refresh();
+            refresh();
 
         }]);
 }());

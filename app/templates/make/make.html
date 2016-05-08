@@ -25,7 +25,7 @@
 
             <!-- tile container -->
             <md-grid-tile ng-repeat="result in results track by $index" class="md-whiteframe-5dp" layout-padding>
-                <div class="favorites-tile-container" ng-click="preview(result)" layout="column">
+                <div class="favorites-tile-container" ng-click="showPreview(result)" layout="column">
 
                     <div class="make-tile-body">
                         <img class="make-logo-img" ng-src={{result.image}} align="left" height="100" width="100">

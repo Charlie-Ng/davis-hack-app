@@ -1,17 +1,58 @@
-<md-dialog flex="40" aria-label="favorite preview">
-    <md-toolbar layout="row" layout-align="space-between center" class="favorites-dialog-preview-toolbar">
-        <p>{{::selectedFavorite.name}}</p>
-        <md-button class="md-icon-button" ng-click="cancel()"><md-icon aria-label="close" md-svg-src="content/icons/ic_close_white_48px.svg"></md-icon></md-button>
+<md-dialog flex="40" aria-label="favorite preview" flex-gt-xs="80" class="make-dialog">
+    <md-toolbar layout="row" layout-align="space-between center" class="make-dialog-preview-toolbar">
+        <p>{{::selectedFood.label}}</p>
+        <md-button class="md-icon-button" ng-click="cancel()"><i class="material-icons">close</i></md-icon></md-button>
     </md-toolbar>
+
+
     <md-dialog-content layout-padding>
-        <p>{{::selectedFavorite.description}}</p>
-        <div ng-if="selectedFavorite.type === 'video'" class="favorites-dialog-content-container">
-            <iframe width="100%" height="315" ng-src="{{selectedFavorite.link}}" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div ng-if="selectedFavorite.type === 'book'" class="favorites-dialog-content-container">
-            <img ng-src={{selectedFavorite.imgUrl}} class="favorites-dialog-img">
-            <a ng-href={{selectedFavorite.link}} target="_blank"><p>get me the book!</p></a>
-        </div>
+
+        <md-tabs md-dynamic-height md-border-bottom md-stretch-tabs="always">
+
+            <md-tab label="Detail">
+                <div class="make-tile-body">
+                    <img class="make-logo-img" ng-src={{::selectedFood.image}} align="middle" height="200" width="200">
+                </div>
+                <md-divider></md-divider>
+                <md-list>
+                    <md-subheader  class="md-no-sticky">ingredient</md-subheader>
+                    <md-list-item ng-repeat="i in selectedFood.ingredientLines track by $index">
+                        {{i}}
+                    </md-list-item>
+
+                </md-list>
+            </md-tab>
+
+            <md-tab label="Interest!">
+                <md-content layout="column">
+                    <div>
+                        <h4> Pick a date</h4>
+                        <md-datepicker ng-model="myTimeObj.myDate" md-placeholder="Enter date"></md-datepicker>
+                    </div>
+
+                    <md-input-container>
+                        <label>Enter a time</label>
+                        <input ng-model="myTimeObj.myTime">
+                    </md-input-container>
+
+                    <md-input-container>
+                        <label>Enter meet up location</label>
+                        <input ng-model="myTimeObj.myLocation">
+                    </md-input-container>
+
+                    <md-input-container>
+                        <label>Enter your phone</label>
+                        <input ng-model="myTimeObj.myPhone">
+                    </md-input-container>
+
+                    <md-button flex="50" class="md-primary md-raised" ng-click="saveListing()">Confirm !</md-button>
+
+                </md-content>
+
+            </md-tab>
+
+        </md-tabs>
+
     </md-dialog-content>
 
 </md-dialog>
