@@ -14,22 +14,9 @@
             $scope.results = [];
 
             $scope.isLoading = false;
-
-            $scope.isFirst = false;
-
-            $scope.recipes = 'http://pe-wbcm.s3.amazonaws.com/media/1001/recipes.png';
-
+            
             $scope.keywords = {"text" : ""};
-
-            $scope.check = function(){
-                if (!$scope.results) {
-                    $scope.isFirst = true;
-                }
-                else {
-                    $scope.isFirst = false;
-                }
-
-            };
+            
 
             $scope.search = function() {
 
