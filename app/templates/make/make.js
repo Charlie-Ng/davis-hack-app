@@ -20,7 +20,13 @@
                         $scope.status = status;
                         $scope.data = data;
                         $scope.result = data; // Show result from server in our <pre></pre> element
-                    })
+                        $scope.calories = angular.fromJson(data.calories);
+                        $scope.weight = angular.fromJson(data.weight);
+                        $scope.fat = angular.fromJson(data.totalNutrients["FAT"]["quantity"]);
+                        $scope.carbon = angular.fromJson(data.totalNutrients["CHOCDF"]["quantity"]);
+                        $scope.protein = angular.fromJson(data.totalNutrients["PROCNT"]["quantity"]);
+                        console.log($scope.fat);
+                })
                     .
                     error(function(data, status) {
                         console.log("failed");
