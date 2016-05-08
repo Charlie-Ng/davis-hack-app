@@ -4,17 +4,17 @@
 angular.module("appControllers")
     .controller("locationCtrl", ["$scope", function ($scope) {
 
-        $scope.helo = "sdfsdf";
         $scope.lat = "0";
         $scope.lng = "0";
         $scope.accuracy = "0";
         $scope.error = "";
         $scope.model = { myMap: undefined };
         $scope.myMarkers = [];
+        $scope.isLoading = false;
 
         $scope.showResult = function () {
             return $scope.error == "";
-        }
+        };
 
 
         $scope.mapOptions = {
@@ -32,7 +32,7 @@ angular.module("appControllers")
             var latlng = new google.maps.LatLng($scope.lat, $scope.lng);
             $scope.model.myMap.setCenter(latlng);
             $scope.myMarkers.push(new google.maps.Marker({ map: $scope.model.myMap, position: latlng }));
-        }
+        };
 
         $scope.showError = function (error) {
             switch (error.code) {
@@ -50,7 +50,7 @@ angular.module("appControllers")
                     break;
             }
             $scope.$apply();
-        }
+        };
 
         $scope.getLocation = function () {
             if (navigator.geolocation) {
@@ -59,9 +59,16 @@ angular.module("appControllers")
             else {
                 $scope.error = "Geolocation is not supported by this browser.";
             }
-        }
+        };
 
         $scope.getLocation();
+
+        $scope.returnKey = function(event) {
+
+            if(event.which === 13) {
+
+            }
+        }
     }]);
 
 }());

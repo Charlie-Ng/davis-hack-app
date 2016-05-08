@@ -1,0 +1,21 @@
+{
+  "name": "Angular-Material-Template",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Charlie-Ng/davis-hack-app",
+  "authors": [
+    "Charlie-Ng <kcng@ucdavis.edu>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-event": "~1.0.0",
+    "angular-ui-map": "~0.5.0",
+    "angular-ui-utils": "~3.0.0"
+  }
+}

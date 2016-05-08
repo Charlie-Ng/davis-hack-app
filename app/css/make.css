@@ -1,0 +1,21 @@
+.make-form button {
+    margin-top: 8px !important;
+}
+
+.make-circular {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.make-search-btn button {
+
+    margin-top: 20px;
+}
+
+.make-grid-list {
+    margin-bottom: 200px;
+}
+
+.make-tile-body {
+    margin: auto;
+}

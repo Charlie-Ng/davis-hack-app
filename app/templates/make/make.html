@@ -1,16 +1,60 @@
-<div ng-controller="makeCtrl">
-    <form class="well form-search">
-        <label>Search:</label>
-        <input type="text" ng-model="keywords" class="input-medium search-query" placeholder="Keywords...">
-        <button type="submit" class="btn" ng-click="search()">Search</button>
-        <button type="submit" class="btn" ng-click="store()">Save</button>
-        <p class="help-block">Try for example: "1 egg", "1 cup of rice" or "2 burgers"</p>
-    </form>
-<pre ng-model="result">
-   "calories" {{calories}} "fat" {{fat}}  "protein" {{protein}}
-    {{results[0]["fat"]}}
-    </pre>
+<div>
+    <md-progress-circular class="make-circular" ng-show="isLoading" md-mode="indeterminate" md-diameter="84"></md-progress-circular>
 
+    <div ng-show="!isLoading">
+        <form class=" make-form" layout="row">
+            <md-input-container flex="80">
+                <input type="text" ng-model="keywords.text" class="input-medium search-query"
+                       placeholder="What food to make?" flex ng-keypress="returnKey($event)">
+            </md-input-container>
+            <md-button class="md-raised md-icon-button md-primary make-search-btn" ng-click="search()">
+                <i class="material-icons">search</i>
+            </md-button>
+        </form>
+
+        <md-grid-list
+                class="make-grid-list"
+                md-cols-xs="2"
+                md-cols-sm="3"
+                md-cols-md="4"
+                md-cols-gt-md="6"
+                md-cols-gt-lg="7"
+                md-gutter="16px"
+                md-gutter-xs="8px"
+                md-row-height="160px">
+
+            <!-- tile container -->
+            <md-grid-tile ng-repeat="result in results track by $index" class="md-whiteframe-5dp" layout-padding>
+                <div class="favorites-tile-container" ng-click="preview(result)" layout="column">
+
+                    <div class="make-tile-body">
+                        <img class="make-logo-img" ng-src={{result.image}} align="left" height="100" width="100">
+                    </div>
+                    <div class="favorites-tile-title">
+                        <b>{{::result.label}}</b>
+                    </div>
+                </div>
+
+            </md-grid-tile>
+
+        </md-grid-list>
+    </div>
 </div>
+
+
+<!--<div ng-controller="makeCtrl">-->
+    <!--<form class="well form-search">-->
+        <!--<label>Search:</label>-->
+        <!--<input type="text" ng-model="keywords" class="input-medium search-query" placeholder="Keywords...">-->
+        <!--<button type="submit" class="btn" ng-click="search()">Search</button>-->
+        <!--<button type="submit" class="btn" ng-click="store()">Save</button>-->
+        <!--<p class="help-block">Try for example: "1 egg", "1 cup of rice" or "2 burgers"</p>-->
+    <!--</form>-->
+<!--<pre ng-model="result">-->
+   <!--"calories" {{calories}} "fat" {{fat}}  "protein" {{protein}}-->
+    <!--{{results[0]["fat"]}}-->
+    <!--</pre>-->
+
+<!--</div>-->
 
 
