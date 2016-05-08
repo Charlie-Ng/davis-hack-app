@@ -38,7 +38,7 @@
         <md-button aria-label="Settings" href="#/make" flex>
             <i class="material-icons">library_books</i>
         </md-button>
-        <md-button aria-label="Settings" href="#/history" flex>
+        <md-button aria-label="Settings" href="#/location" flex>
             <i class="material-icons">account_balance</i>
         </md-button>
         <md-button  aria-label="Settings" href="#/profile" flex>
@@ -73,12 +73,18 @@
 <script type="text/javascript" src="../node_modules/angular-route/angular-route.js"></script>
 <script type="text/javascript" src="../node_modules/ng-facebook/ngFacebook.js"></script>
 
+<script type="text/javascript" src="../bower_components/angular-ui-map/ui-map.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-map/ui-map.js"></script>
+
+    <script type="text/javascript" src="../bower_components/angular-ui-event/src/event.js"></script>
+
 <!-- app js -->
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
 <script type="text/javascript" src="app.modules.js"></script>
 <script type="text/javascript" src="app.controller.js"></script>
 <script type="text/javascript" src="templates/intro/intro.js"></script>
 <script type="text/javascript" src="templates/profile/profile.js"></script>
-<script type="text/javascript" src="templates/history/history.js"></script>
+<script type="text/javascript" src="templates/location/location.js"></script>
 <script type="text/javascript" src="templates/make/make.js"></script>
 <script type="text/javascript" src="services/user.service.js"></script>
 
