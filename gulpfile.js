@@ -53,7 +53,7 @@ gulp.task('serve', function () {
     gulp.watch('app/css/*.css', ['js-watch']);
     //gulp.watch('app/templates/item1/*.js', ['js-watch']);
     //gulp.watch('app/templates/item1/*.html', ['js-watch']);
-    gulp.watch('index.html').on('change', function() {
+    gulp.watch('app/index.html').on('change', function() {
 
         browserSync.reload();
     });

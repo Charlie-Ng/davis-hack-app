@@ -12,7 +12,7 @@ md-sidenav {
 }
 
 .main-bottom-bar {
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     min-height: 0;
     height: 42px;
@@ -24,4 +24,24 @@ md-sidenav {
 
 .main-bottom-bar i {
     padding-top: 10px;
+}
+
+.intro-text {
+    text-align: center;
+}
+
+.intro-nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:29%;
+    float:left;
+    padding:5px;
+}
+
+.intro-section {
+    width:38%;
+    height:300px;
+    float:left;
+    padding:10px;
 }
