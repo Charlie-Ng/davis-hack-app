@@ -1,13 +1,25 @@
 .intro-profile {
     text-align: center;
+
     margin-top: 16px;
+
 }
 
 .profile-login-btn {
     margin: 16px 0px 0px 0px;
     height: 50px;
+
 }
 
 .intro-profile > img {
     border-radius: 80%;
+}
+img.background
+{
+    align:"middle";
+    margin-left: 10%;
+    margin-right: auto;
+
+    max-width:80%;
+    max-height:80%;
 }
