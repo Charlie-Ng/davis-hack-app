@@ -121,7 +121,9 @@ img.lid{
 
 .profile-join {
     text-align: center;
-    font-size:200%;
+    margin-top:4px;
+    margin-bottom:5px;
+    font-size:150%;
     font-family: 'Over the Rainbow';
     font-weight:bold;
     color: #348dff;
