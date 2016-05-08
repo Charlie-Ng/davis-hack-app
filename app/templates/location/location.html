@@ -1,0 +1,22 @@
+<script src="../location.js"></script>
+
+<div class="container main">
+    {{helo}}
+    <form>
+        <div class="row">
+            <div id="map_canvas" ui-map="model.myMap" class="map" ui-options="mapOptions">
+            </div>
+            <div ng-repeat="marker in myMarkers" ui-map-marker="myMarkers[$index]">
+            </div>
+        </div>
+        <div class="row" ng-show="showResult()">
+            Latitude: {{lat}} <br />
+            Longitude: {{lng}} <br />
+            Accuracy: {{accuracy}}
+        </div>
+        <div class="row" ng-show="!showResult()">
+            Error : {{error}}
+            Error Code: {{error.code}}
+        </div>
+    </form>
+</div>

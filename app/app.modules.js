@@ -4,7 +4,7 @@
 
 (function() {
 
-    angular.module('ourApp', ['appControllers', 'ngRoute', 'ngMaterial', 'ngFacebook', 'app.service'])
+    angular.module('ourApp', ['appControllers', 'ngRoute', 'ngMaterial', 'ngFacebook', 'app.service', 'ui.map', 'ui.event'])
         .config(['$routeProvider', '$facebookProvider', function($routeProvider, $facebookProvider) {
 
             $routeProvider
@@ -20,9 +20,9 @@
                     templateUrl: 'templates/make/make.html',
                     controller: 'makeCtrl'
                 })
-                .when('/history', {
-                    templateUrl: 'templates/history/history.html',
-                    //controller: ''
+                .when('/location', {
+                    templateUrl: 'templates/location/location.html',
+                    controller: 'locationCtrl'
                 });
 
             $facebookProvider.setAppId('1612301489091125');
