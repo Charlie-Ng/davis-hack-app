@@ -18,7 +18,7 @@
                 })
                 .when('/make', {
                     templateUrl: 'templates/make/make.html',
-                    //controller: 'makeCtrl'
+                    controller: 'makeCtrl'
                 })
                 .when('/history', {
                     templateUrl: 'templates/history/history.html',
