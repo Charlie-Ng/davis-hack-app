@@ -53,6 +53,7 @@
                             oneItem["protein"] = tmp.totalNutrients["PROCNT"]["quantity"];
                             oneItem["label"] = tmp['label'];
                             oneItem["ingredientLines"] = tmp['ingredientLines'];
+                            oneItem["healthLabels"] = tmp['healthLabels']; 
 
                             oneItem["url"] = tmp.url;
                             oneItem["image"] = tmp.image;

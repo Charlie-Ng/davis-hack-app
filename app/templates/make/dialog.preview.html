@@ -21,6 +21,38 @@
                     </md-list-item>
 
                 </md-list>
+
+                <md-list>
+                    <md-subheader  class="md-no-sticky">nutrition data</md-subheader>
+
+                    <md-list-item >
+                        Calories: {{selectedFood.calories | number:2}} g ({{selectedFood.calories/1940*100 | number:1}}%)
+                    </md-list-item>
+
+                    <md-list-item >
+                        Protein: {{selectedFood.protein | number:2}} g ({{selectedFood.protein/50*100 | number:1}}%)
+                    </md-list-item>
+
+                    <md-list-item >
+                        Carbonhydrates: {{selectedFood.carbon | number:2}} g ({{selectedFood.carbon/310*100 | number:1}}%)
+                    </md-list-item>
+
+                    <md-list-item >
+                        Fat: {{selectedFood.fat | number:2}} g ({{selectedFood.fat/70*100 | number:1}}%)
+                    </md-list-item>
+
+
+                </md-list>
+
+
+                <md-list>
+                    <md-subheader  class="md-no-sticky">labels</md-subheader>
+                    <md-list-item ng-repeat="i in selectedFood.healthLabels track by $index">
+                        {{i}}
+                    </md-list-item>
+
+                </md-list>
+
             </md-tab>
 
             <md-tab label="Interest!">
