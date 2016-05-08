@@ -1,48 +1,25 @@
-<div>
-
-    <md-progress-circular class="make-circular" ng-show="isLoading" md-mode="indeterminate" md-diameter="84"></md-progress-circular>
+<div ng-controller="locationCtrl">
 
     <div ng-show="!isLoading">
         <form class=" make-form" layout="row">
             <md-input-container flex="80">
                 <input type="text" ng-model="keywords.text" class="input-medium search-query"
-                       placeholder="keywords" flex ng-keypress="returnKey($event)">
-                <!--<button type="submit" class="btn" >Search</button>-->
-                <!--<p class="help-block">Try for example: "php" or "angularjs" or "asdfg"</p>-->
+                       placeholder="What food to make?" flex ng-keypress="returnKey($event)">
             </md-input-container>
-            <md-button class="md-raised md-icon-button md-primary make-search-btn" ng-click="search()">
+            <md-button class="md-raised md-icon-button md-primary make-search-btn" ng-click="showList()">
                 <i class="material-icons">search</i>
             </md-button>
         </form>
     </div>
-<pre ng-model="result">
-{{result}}
-    </pre>
+
+    <table>
+        <tr ng-repeat="x in results">
+            <td>Time: {{ x.appDate }}</td>
+            <td>{{ x.appTime }}</td>
+            <td>User: {{ x.user }}</td>
+            <td>Foor: {{ x.food }}</td>
+        </tr>
+    </table>
+
 
 </div>
-
-
-
-
-<!--<script src="../location.js"></script>-->
-
-<!--<div class="container main">-->
-    <!--{{helo}}-->
-    <!--<form>-->
-        <!--<div class="row">-->
-            <!--<div id="map_canvas" ui-map="model.myMap" class="map" ui-options="mapOptions">-->
-            <!--</div>-->
-            <!--<div ng-repeat="marker in myMarkers" ui-map-marker="myMarkers[$index]">-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="row" ng-show="showResult()">-->
-            <!--Latitude: {{lat}} <br />-->
-            <!--Longitude: {{lng}} <br />-->
-            <!--Accuracy: {{accuracy}}-->
-        <!--</div>-->
-        <!--<div class="row" ng-show="!showResult()">-->
-            <!--Error : {{error}}-->
-            <!--Error Code: {{error.code}}-->
-        <!--</div>-->
-    <!--</form>-->
-<!--</div>-->

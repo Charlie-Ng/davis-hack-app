@@ -2,7 +2,54 @@
 (function() {
 
 angular.module("appControllers")
-    .controller("locationCtrl", ["$scope", function ($scope) {
+    .controller("locationCtrl", ["$scope", '$http', '$timeout',function ($scope, $http, $timeout) {
+
+        $scope.listUrl = 'http://shawnxiang.com/lunchbox/getListing.php'; // The url of our search
+
+        $scope.results = [];
+
+        $scope.showList = function() {
+
+            var oneItem = {};
+
+            $scope.showResult();
+
+            console.log("visited");
+
+            $http.get($scope.listUrl+'?latitude='+$scope.lat+'&longtitude=' + $scope.lng)
+
+                .success(function(data, status) {
+                    console.log(data);
+                    //$scope.result = data['hits']; // Show result from server in our <pre></pre> element
+                    for(var i = 0; i < data.length; i++) {
+                        var tmp = data[i];
+                        console.log(tmp.calories);
+                        oneItem["calories"] = tmp.calories;
+                        oneItem["fat"] = tmp.fat;
+                        oneItem["carbon"] = tmp.carbon;
+                        oneItem["protein"] = tmp.protein;
+                        oneItem["location"] = tmp.location;
+                        oneItem["food"] = tmp.food;
+                        oneItem["user"] = tmp.user;
+                        oneItem["appDate"] = tmp.appDate;
+                        oneItem["appTime"] = tmp.appTime;
+
+                        console.log(oneItem);
+
+                        $scope.results.push(oneItem);
+                        oneItem = {};
+                    }
+
+
+
+                })
+                .error(function(data, status) {
+                    console.log("failed");
+                    $scope.data = data || "Request failed";
+                    $scope.status = status;
+                    $scope.isLoading = false;
+                });
+        };
 
         $scope.lat = "0";
         $scope.lng = "0";
@@ -10,7 +57,6 @@ angular.module("appControllers")
         $scope.error = "";
         $scope.model = { myMap: undefined };
         $scope.myMarkers = [];
-        $scope.isLoading = false;
 
         $scope.showResult = function () {
             return $scope.error == "";
@@ -30,23 +76,23 @@ angular.module("appControllers")
             $scope.$apply();
 
             var latlng = new google.maps.LatLng($scope.lat, $scope.lng);
-            $scope.model.myMap.setCenter(latlng);
-            $scope.myMarkers.push(new google.maps.Marker({ map: $scope.model.myMap, position: latlng }));
+            //$scope.model.myMap.setCenter(latlng);
+            //$scope.myMarkers.push(new google.maps.Marker({ map: $scope.model.myMap, position: latlng }));
         };
 
         $scope.showError = function (error) {
             switch (error.code) {
                 case error.PERMISSION_DENIED:
-                    $scope.error = "User denied the request for Geolocation."
+                    $scope.error = "User denied the request for Geolocation.";
                     break;
                 case error.POSITION_UNAVAILABLE:
-                    $scope.error = "Location information is unavailable."
+                    $scope.error = "Location information is unavailable.";
                     break;
                 case error.TIMEOUT:
-                    $scope.error = "The request to get user location timed out."
+                    $scope.error = "The request to get user location timed out.";
                     break;
                 case error.UNKNOWN_ERROR:
-                    $scope.error = "An unknown error occurred."
+                    $scope.error = "An unknown error occurred.";
                     break;
             }
             $scope.$apply();
@@ -66,9 +112,12 @@ angular.module("appControllers")
         $scope.returnKey = function(event) {
 
             if(event.which === 13) {
-
+                $scope.search();
             }
-        }
+        };
+
+
+
     }]);
 
 }());
