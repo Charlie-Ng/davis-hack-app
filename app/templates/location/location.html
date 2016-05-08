@@ -1,26 +1,66 @@
-<div ng-controller="locationCtrl">
+<div style="padding-bottom: 100px">
 
-    <div ng-show="!isLoading">
-        <form class=" make-form" layout="row">
-            <md-input-container flex="80">
-                <input type="text" ng-model="keywords.text" class="input-medium search-query"
-                       placeholder="What food to make?" flex ng-keypress="returnKey($event)">
-            </md-input-container>
-            <md-button class="md-raised md-icon-button md-primary make-search-btn" ng-click="showList()">
-                <i class="material-icons">search</i>
-            </md-button>
-        </form>
+    <p style="text-align: center"><strong>Awaiting Responses (text message sent)</strong></p>
+        <md-card ng-repeat="user in userObj1" style="background-color: #ED8761">
+            <md-card-title >
+                <md-card-title-text>
+                    <b>{{user.name}}</b>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <div>
+                    <strong>Interest:</strong> {{user.interest}}
+                </div>
+                <div>
+                    <strong>Phone: </strong>{{user.phone}}
+                </div>
+                <div>
+                    <strong>Location:</strong> {{user.location}}
+                </div>
+            </md-card-content>
+        </md-card>
 
-    </div>
+    <md-divider></md-divider>
 
-    <table>
-        <tr ng-repeat="x in results">
-            <td>Time: {{ x.appDate }}</td>
-            <td>{{ x.appTime }}</td>
-            <td>User: {{ x.user }}</td>
-            <td>Foor: {{ x.food }}</td>
-        </tr>
-    </table>
+    <p style="text-align: center"><strong>Responsed</strong></p>
+
+    <md-card ng-repeat="user in userObj2" style="background-color: #9fb88c !important">
+        <md-card-title>
+            <md-card-title-text>
+                <b>{{user.name}}</b>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <div>
+                <strong>Interest:</strong> {{user.interest}}
+            </div>
+            <div>
+                <strong>Phone: </strong>{{user.phone}}
+            </div>
+            <div>
+                <strong>Location:</strong> {{user.location}}
+            </div>
+        </md-card-content>
+    </md-card>
+
+        <!--<form class=" make-form" layout="row">-->
+            <!--<md-input-container flex="80">-->
+                <!--<input type="text" ng-model="keywords.text" class="input-medium search-query"-->
+                       <!--placeholder="What food to make?" flex ng-keypress="returnKey($event)">-->
+            <!--</md-input-container>-->
+            <!--<md-button class="md-raised md-icon-button md-primary make-search-btn" ng-click="showList()">-->
+                <!--<i class="material-icons">search</i>-->
+            <!--</md-button>-->
+        <!--</form>-->
+
+    <!--<table>-->
+        <!--<tr ng-repeat="x in results">-->
+            <!--<td>Time: {{ x.appDate }}</td>-->
+            <!--<td>{{ x.appTime }}</td>-->
+            <!--<td>User: {{ x.user }}</td>-->
+            <!--<td>Foor: {{ x.food }}</td>-->
+        <!--</tr>-->
+    <!--</table>-->
 
 
 </div>

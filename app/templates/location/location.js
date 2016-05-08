@@ -117,6 +117,43 @@ angular.module("appControllers")
         };
 
 
+        $scope.userObj1 = [
+            {
+                'name' : 'Charlie',
+                'interest' : 'Gonna make Japanese food',
+                'phone' : '214-213-2429',
+                'location' : 'Davis, CA'
+            },
+            {
+                'name' : 'Donald Jump',
+                'interest' : 'Gonna make Mexican food',
+                'phone' : '123-456-0000',
+                'location' : 'Sacramento, CA'
+            },
+            {
+                'name' : 'Bernini Sandlers',
+                'interest' : 'Gonna make sandwiches',
+                'phone' : '508-123-2016',
+                'location' : 'Sacramento, CA'
+            }
+        ];
+
+        $scope.userObj2 = [
+            {
+                'name' : 'Justin Fever',
+                'interest' : 'Gonna make fried rice',
+                'phone' : '202-414-3455',
+                'location' : 'Davis, CA'
+            },
+            {
+                'name' : 'Serina Gomaze',
+                'interest' : 'Gonna make sushi',
+                'phone' : '289-385-4545',
+                'location' : 'Davis, CA'
+            }
+        ]
+
+
 
     }]);
 
