@@ -4,7 +4,7 @@
 
 (function() {
 
-    angular.module('ourApp', ['appControllers', 'ngRoute', 'ngMaterial', 'ngFacebook'])
+    angular.module('ourApp', ['appControllers', 'ngRoute', 'ngMaterial', 'ngFacebook', 'app.service'])
         .config(['$routeProvider', '$facebookProvider', function($routeProvider, $facebookProvider) {
 
             $routeProvider
@@ -48,4 +48,7 @@
             firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
         }());
     });
+
+    angular.module('app.service', []);
+
 }());

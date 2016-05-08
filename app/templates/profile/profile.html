@@ -1,16 +1,15 @@
 <md-content>
 
     <div ng-show="!isLoggedIn">
-        <button type="button" ng-click="logout()" ng-hide="!isLoggedIn" class="btn btn-default navbar-btn">
-            Logout
-        </button>
 
         <div style="text-align: center;" layout="column">
             <h1>Introduction of Lunch Box </h1>
-            <p1> New lifestyle: Meet people by eating together.</p1>
+            <p> New lifestyle: Meet people by eating together.</p>
 
-            <md-button ng-click="login()" ng-hide="isLoggedIn" class="btn btn-default navbar-btn">
-                <img height="50" width="200" src="https://www.codenameone.com/img/blog/facebook-login-blue.png" alt="login with facebook"><img align="middle">
+            <md-button ng-click="login()" ng-hide="isLoggedIn" class="profile-login-btn">
+                <div>
+                    <img height="50" width="200" src="https://www.codenameone.com/img/blog/facebook-login-blue.png" alt="login with facebook"><img align="middle">
+                </div>
             </md-button>
         </div>
     </div>
@@ -18,10 +17,12 @@
     <div ng-show="isLoggedIn">
 
         <div class="intro-profile">
-            <img ng-src="{{picture}}" height="220" width="220" >
+            <img ng-src="{{userObj.picture}}" height="180" width="180" >
             <p><strong>{{welcomeMsg}}</strong></p>
+            <p ng-show="!isDisabled">{{reminderMsg1}}<br>{{reminderMsg2}}</p>
 
-            <form>
+
+            <form layout="column" layout-align="center center">
 
                 <md-input-container>
                     <label>Name</label>
@@ -29,20 +30,23 @@
                 </md-input-container>
 
                 <md-input-container>
-                    <label>Interest</label>
-                    <input ng-model="userObj.interest" ng-disabled="true">
+                    <label>Gender</label>
+                    <input placeholder="Male/Female" ng-model="userObj.gender" ng-disabled="isDisabled">
                 </md-input-container>
 
                 <md-input-container>
                     <label>Description</label>
-                    <input ng-model="userObj.description" ng-disabled="true">
+                    <textarea placeholder="I am ..." ng-model="userObj.description" ng-disabled="isDisabled"></textarea>
                 </md-input-container>
 
             </form>
+
+            <div layout="row" layout-align="center center">
+                <md-button ng-show="isDisabled" class="md-raised md-primary" ng-click="getUserData()">Go Share!</md-button>
+                <md-button ng-show="!isDisabled" class="md-raised md-primary" ng-click="createUser()">submit</md-button>
+                <md-button class="md-raised md-warn" ng-click="logout()">log out</md-button>
+            </div>
         </div>
-
-        <md-button class="md-primary">button</md-button>
-
     </div>
 
 </md-content>

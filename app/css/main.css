@@ -6,11 +6,6 @@ md-toolbar {
     text-align: center !important;
 }
 
-md-sidenav {
-    min-width: 0px;
-    width: 250px;
-}
-
 .main-bottom-bar {
     position: fixed;
     bottom: 0px;
