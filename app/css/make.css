@@ -19,3 +19,20 @@
 .make-tile-body {
     margin: auto;
 }
+
+.pic{
+    margin-left: 30%;
+    width:35%;
+    height:250px;
+    display: block;
+    padding:10px;
+    background-color: transparent;
+}
+
+.small{
+    display: block;
+    margin-left: 45%;
+    width:100px;
+    height:60px;
+
+}

@@ -1,16 +1,34 @@
 <div>
     <md-progress-circular class="make-circular" ng-show="isLoading" md-mode="indeterminate" md-diameter="84"></md-progress-circular>
 
+
+
     <div ng-show="!isLoading">
+
+        <div ng-hide="check()"></div>
+        <div ng-show="!isFirst">
+            <img class="pic" src = "http://pe-wbcm.s3.amazonaws.com/media/1001/recipes.png"  />
+
+        </div>
+
+        <div ng-show="isFirst">
+            <img class="small" src = "http://pe-wbcm.s3.amazonaws.com/media/1001/recipes.png" />
+
+        </div>
+
+
         <form class=" make-form" layout="row">
             <md-input-container flex="80">
                 <input type="text" ng-model="keywords.text" class="input-medium search-query"
-                       placeholder="What food to make?" flex ng-keypress="returnKey($event)">
+                       placeholder="Enter the food you want to make here" flex ng-keypress="returnKey($event)">
             </md-input-container>
             <md-button class="md-raised md-icon-button md-primary make-search-btn" ng-click="search()">
                 <i class="material-icons">search</i>
             </md-button>
+
+
         </form>
+
 
         <md-grid-list
                 class="make-grid-list"
@@ -40,21 +58,5 @@
         </md-grid-list>
     </div>
 </div>
-
-
-<!--<div ng-controller="makeCtrl">-->
-    <!--<form class="well form-search">-->
-        <!--<label>Search:</label>-->
-        <!--<input type="text" ng-model="keywords" class="input-medium search-query" placeholder="Keywords...">-->
-        <!--<button type="submit" class="btn" ng-click="search()">Search</button>-->
-        <!--<button type="submit" class="btn" ng-click="store()">Save</button>-->
-        <!--<p class="help-block">Try for example: "1 egg", "1 cup of rice" or "2 burgers"</p>-->
-    <!--</form>-->
-<!--<pre ng-model="result">-->
-   <!--"calories" {{calories}} "fat" {{fat}}  "protein" {{protein}}-->
-    <!--{{results[0]["fat"]}}-->
-    <!--</pre>-->
-
-<!--</div>-->
 
 
