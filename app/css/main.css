@@ -37,8 +37,8 @@ md-sidenav {
     line-height:20px;
     background-color:WhiteSmoke ;
     height:100%;
-    width:40%;
-    float:left;
+    width:43%;
+    float:right;
     padding:5px;
     font-size:100%;
     font-family: 'Kalam', cursive;
@@ -46,11 +46,12 @@ md-sidenav {
 }
 
 .intro-section {
-    width:45%;
+    width:35%;
     height:300px;
-    float:left;
+    float:right;
     padding:10px;
 }
+
 img.displayed {
     display: block;
     margin-left: auto;
@@ -61,10 +62,67 @@ img.displayed {
 
 .app-name {
     text-align: center;
-    height:100%;
-    width:40%;
-    padding:5px;
-    font-size:200%;
+    height: 100%;
+    width: 40%;
+    padding: 5px;
+    font-size: 200%;
     font-family: 'Rock Salt', cursive;
-    color:white;
+    color: white;
 }
+
+img.box{
+    max-width: 50%;
+    max-height: 30%;
+    animation: float-up-down 1000ms ease-in-out infinite alternate;
+}
+
+img.lid{
+    max-width: 35%;
+    max-height: 30%;
+    animation: float-down-up 1000ms ease-in-out infinite alternate;
+}
+
+.started{
+    margin-left: 30px;
+    text-align: left;
+    font-size: 160%;
+    height:2%;
+    width:300px;
+    font-family: 'Shadows Into Light';
+}
+
+
+@media screen and (max-width: 600px) {
+
+    img.box, img.lid {
+        max-width: 100%;
+        width: 160px;
+    }
+    .started {
+        margin-left: 30px;
+        width: 100px;
+        padding-bottom: 20px;
+    }
+}
+
+@-webkit-keyframes float-up-down {
+    from {
+        -webkit-transform:translate(0px,-10px);
+    }
+    to {
+        -webkit-transform:translate(0px,10px);
+    }
+}
+
+
+@-webkit-keyframes float-down-up {
+    from {
+        -webkit-transform:translate(0px,10px);
+    }
+    to {
+        -webkit-transform:translate(0px,-10px);
+    }
+}
+
+
+
