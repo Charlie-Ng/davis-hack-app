@@ -23,20 +23,101 @@ md-toolbar {
 
 .intro-text {
     text-align: center;
+    font-size:130%;
+    font-family: 'Bad Script', cursive;
+    color:LightSlateGrey ;
 }
 
-.intro-nav {
-    line-height:30px;
-    background-color:#eeeeee;
-    height:300px;
-    width:29%;
-    float:left;
+.intro-des {
+    line-height:20px;
+    background-color:WhiteSmoke ;
+    height:100%;
+    width:43%;
+    float:right;
     padding:5px;
+    font-size:100%;
+    font-family: 'Kalam', cursive;
+    color:Teal;
 }
 
 .intro-section {
-    width:38%;
+    width:35%;
     height:300px;
-    float:left;
+    float:right;
     padding:10px;
 }
+
+img.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width:80%;
+    max-height:80%;
+}
+
+.app-name {
+    text-align: center;
+    height: 100%;
+    width: 40%;
+    padding: 5px;
+    font-size: 200%;
+    font-family: 'Rock Salt', cursive;
+    color: white;
+}
+
+img.box{
+    max-width: 50%;
+    max-height: 30%;
+    animation: float-up-down 1000ms ease-in-out infinite alternate;
+}
+
+img.lid{
+    max-width: 35%;
+    max-height: 30%;
+    animation: float-down-up 1000ms ease-in-out infinite alternate;
+}
+
+.started{
+    margin-left: 30px;
+    text-align: left;
+    font-size: 160%;
+    height:2%;
+    width:300px;
+    font-family: 'Shadows Into Light';
+}
+
+
+@media screen and (max-width: 600px) {
+
+    img.box, img.lid {
+        max-width: 100%;
+        width: 160px;
+    }
+    .started {
+        margin-left: 30px;
+        width: 100px;
+        padding-bottom: 20px;
+    }
+}
+
+@-webkit-keyframes float-up-down {
+    from {
+        -webkit-transform:translate(0px,-10px);
+    }
+    to {
+        -webkit-transform:translate(0px,10px);
+    }
+}
+
+
+@-webkit-keyframes float-down-up {
+    from {
+        -webkit-transform:translate(0px,10px);
+    }
+    to {
+        -webkit-transform:translate(0px,-10px);
+    }
+}
+
+
+
